@@ -1,9 +1,6 @@
-// import { Helmet } from "react-helmet";
-// import Swal from "sweetalert2";
-
 
 const FoodAddItem = () => {
-    const handleAddCraftItem = event => {
+    const handleAddFoodItem = event => {
         event.preventDefault();
 
         const form = event.target;
@@ -11,42 +8,34 @@ const FoodAddItem = () => {
         const name = form.name.value;
         const photo = form.photo.value;
         const price = form.price.value;
-        const rating = form.rating.value;
         const email = form.email.value;
-        const itemName = form.itemName.value;
-        const processingTime = form.processingTime.value;
-        const customizationExample = form.customizationExample.value;
-        const stockStatus = form.stockStatus.value;
+        const foodOrigin = form.foodOrigin.value;
+        const foodName = form.foodName.value;
+        const quantity = form.quantity.value;
         const description = form.description.value;
         const subcategory = form.subcategory.value;
-        const newItem = {name, photo, rating, price, email, description, itemName, customizationExample, processingTime, stockStatus, subcategory}
-        console.log(newItem);
+        const newFood = {name, photo, foodOrigin, foodName, price, email, description, quantity, subcategory}
+        console.log(newFood);
 
         // send data to the server
-        fetch('https://assignment-ten-server-alpha-one.vercel.app/addCraft', {
+        fetch('http://localhost:5000/food', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(newItem)
+            body: JSON.stringify(newFood)
         })
         .then(res => res.json())
         .then(data => {
             console.log(data);
-            if(data.insertedId){
-                Swal.fire({
-                    title: 'success!',
-                    text: 'Do you want to continue',
-                    icon: 'success',
-                    confirmButtonText: 'Cool'
-                  })
-                  form.reset();
-            }
         })
+
+
     }
+
     return (
         <div className="pt-10 w-[80%] mx-auto mb-10">
-            {/* <Helmet><title>Add Craft Item</title></Helmet> */}
+         
 
         <div className="shadow-lg p-5 border dark:bg-[#1a2641d5] rounded-xl">
           {/* Heading */}
@@ -57,7 +46,7 @@ const FoodAddItem = () => {
 
           {/* form */}
        
-                <form onSubmit={handleAddCraftItem} className=" w-full p-5 mb-8 bg-gray-300">
+                <form onSubmit={handleAddFoodItem} className=" w-full p-5 mb-8 bg-gray-300">
                    
                     <div className="grid grid-cols-2 gap-5">
                         <div>
@@ -71,7 +60,7 @@ const FoodAddItem = () => {
                             <div  className="mb-6">
                             <h3 className="font-bold">Category Name :</h3>
                                 <label className="input  input-bordered flex items-center gap-2">
-                                    <input type="text" name="subcategory" placeholder="subcategory Name"required/>
+                                    <input type="text" name="subcategory" placeholder="Category Name"required/>
                                 </label>
                             
                             </div>
@@ -98,7 +87,7 @@ const FoodAddItem = () => {
                         <div  className="mb-6">
                             <h3 className="font-bold">Food Name:</h3>
                                 <label className="input  input-bordered flex items-center gap-2">
-                                    <input type="text" name="itemName" placeholder="Item Name"required/>
+                                    <input type="text" name="foodName" placeholder="Food name"required/>
                                 </label>
                             
                             </div>
@@ -106,7 +95,7 @@ const FoodAddItem = () => {
                             <div  className="mb-6">
                             <h3 className="font-bold">Food Origin :</h3>
                                 <label className="input input-bordered flex items-center gap-2 mb-4">
-                                    <input type="text" name="stockStatus" placeholder="stockStatus"  required/>
+                                    <input type="text" name="foodOrigin" placeholder="Food origin"  required/>
                                 </label>
                             
                             </div>
@@ -114,7 +103,7 @@ const FoodAddItem = () => {
                             <div className="mb-6">
                                 <h3 className="font-bold">Quantity :</h3>
                                 <label className="input input-bordered flex items-center gap-2">
-                                    <input type="text" name="processingTime" placeholder="processing Time" required/>
+                                    <input type="text" name="quantity" placeholder="Quantity" required/>
                                 </label>
                                 
                             </div>
