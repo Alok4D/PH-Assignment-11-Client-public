@@ -9,6 +9,7 @@ import {
 import Root from './Roots/Root';
 import Error from './Error-Pages/Error';
 import FoodSection from './Pages-Component/Food-Sections/FoodSection';
+import FoodAddItem from './Pages-Component/Food-Add-Item/FoodAddItem';
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <FoodSection></FoodSection>,
+      },
+      {
+        path: '/foodAddItem',
+        element: <FoodAddItem></FoodAddItem>,
       }
     ]
   },

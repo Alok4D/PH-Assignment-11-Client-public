@@ -1,7 +1,7 @@
 
 
 
-import Banner from "../Banner/Banner";
+// import Banner from "../Banner/Banner";
 
 
 const FoodSection = () => {
@@ -11,7 +11,7 @@ const FoodSection = () => {
     return (
         <div className="mt-8 mb-8">
 
-         <Banner></Banner>
+         {/* <Banner></Banner> */}
 
       <div className="mt-8 mb-8">
         <h2 className="text-[#131313] text-[50px] text-center">Top Foods Section </h2>
