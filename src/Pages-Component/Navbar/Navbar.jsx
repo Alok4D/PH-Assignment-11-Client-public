@@ -3,11 +3,11 @@ import navLogo from '../../assets/Nav-Logo/logo.svg';
 import { useContext } from "react";
 import { AuthContext } from "../../Auth-Provider/AuthProvider";
 
-
-
 const Navbar = () => {
+
   const { user, logOut } = useContext(AuthContext);
   console.log(user);
+
 const links = (
 
   <>
@@ -72,7 +72,7 @@ const links = (
         <ul className="menu menu-horizontal px-1 gap-3">{links}</ul>
       </div>
       <div className="lg:navbar-end lg:gap-4 gap-2 ">
-      <a className="btn bg-[#F60] text-[16px]">Login</a>
+     
       {user ? (
           <div className="flex gap-4 justify-center items-center">
            

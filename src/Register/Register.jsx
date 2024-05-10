@@ -89,7 +89,7 @@ const Register = () => {
        
     }
     return (
-        <div  className="w-80 md:w-96 lg:w-[500px] mx-auto mt-8 border rounded-xl bg-white flex items-center relative overflow-hidden shadow-xl mb-8"  data-aos="zoom-in">
+        <div  className="w-80 md:w-96 lg:w-[500px] mx-auto mt-8 border rounded-xl bg-white flex items-center relative overflow-hidden shadow-xl mb-8"  >
         {/* <Helmet><title>Create a an account</title></Helmet> */}
             {/* register form  */}
             <div className={`p-8 w-full duration-500` }>

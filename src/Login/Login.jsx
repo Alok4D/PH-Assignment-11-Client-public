@@ -4,9 +4,9 @@
 // import { toast } from "react-toastify";
 // import { Helmet } from "react-helmet";
 
-import { useContext } from "react";
+import { useContext} from "react";
 import { AuthContext } from "../Auth-Provider/AuthProvider";
-import { Link, Navigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 // import AOS from 'aos';
@@ -15,16 +15,12 @@ import { toast } from "react-toastify";
 
 const Login = () => {
 
-//   useEffect(() => {
-//     AOS.init({
-//       duration: 2000,
-//     });
-//   }, []);
 
 
-//   const location = useLocation()
-//   console.log(location);
-//   const Navigate = useNavigate()
+
+  const location = useLocation()
+  console.log(location);
+  const Navigate = useNavigate()
    
    const {loginUser, googleLogin, setUser,  githubLogin} = useContext(AuthContext)
  
@@ -70,7 +66,7 @@ const Login = () => {
 
 
     return (
-       <div className="hero w-[80%] mx-auto rounded-xl min-h-screen bg-base-200 mb-8 mt-8" data-aos="zoom-in">
+       <div className="hero w-[80%] mx-auto rounded-xl min-h-screen bg-base-200 mb-8 mt-8" >
         {/* <Helmet><title>Login Page</title></Helmet> */}
   <div className="hero-content flex-col lg:flex-row-reverse">
 
