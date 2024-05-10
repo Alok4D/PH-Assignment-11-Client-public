@@ -1,3 +1,5 @@
+import Swal from 'sweetalert2'
+
 
 const FoodAddItem = () => {
     const handleAddFoodItem = event => {
@@ -28,6 +30,15 @@ const FoodAddItem = () => {
         .then(res => res.json())
         .then(data => {
             console.log(data);
+            if(data.insertedId){
+                Swal.fire({
+                    title: 'success!',
+                    text: 'User Added Successfully!',
+                    icon: 'success',
+                    confirmButtonText: 'Cool'
+                  })
+                  form.reset();
+            }
         })
 
 

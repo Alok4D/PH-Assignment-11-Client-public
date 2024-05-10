@@ -1,0 +1,81 @@
+[
+    {
+      "foodName": "Spaghetti Carbonara",
+      "foodImage": "spaghetti_carbonara.jpg",
+      "foodCategory": "Pasta",
+      "quantity": 1,
+      "price": 12.99,
+      "addBy": {
+        "name": "Alice Smith",
+        "email": "alice@example.com"
+      },
+      "foodOrigin": "Italy",
+      "description": "Classic Italian pasta dish made with spaghetti, eggs, Parmesan cheese, pancetta or guanciale, and black pepper."
+    },
+    {
+      "foodName": "Sushi Rolls",
+      "foodImage": "sushi_rolls.jpg",
+      "foodCategory": "Sushi",
+      "quantity": 6,
+      "price": 24.99,
+      "addBy": {
+        "name": "Bob Johnson",
+        "email": "bob@example.com"
+      },
+      "foodOrigin": "Japan",
+      "description": "Japanese delicacy consisting of vinegared rice, seafood, and vegetables rolled in seaweed."
+    },
+    {
+      "foodName": "Chicken Tikka Masala",
+      "foodImage": "chicken_tikka_masala.jpg",
+      "foodCategory": "Curry",
+      "quantity": 1,
+      "price": 15.99,
+      "addBy": {
+        "name": "Emma Brown",
+        "email": "emma@example.com"
+      },
+      "foodOrigin": "India",
+      "description": "Creamy tomato-based curry with marinated and grilled chicken pieces, flavored with various spices."
+    },
+    {
+      "foodName": "Caesar Salad",
+      "foodImage": "caesar_salad.jpg",
+      "foodCategory": "Salad",
+      "quantity": 1,
+      "price": 8.99,
+      "addBy": {
+        "name": "David Lee",
+        "email": "david@example.com"
+      },
+      "foodOrigin": "Mexico",
+      "description": "Traditional salad made with romaine lettuce, croutons, Parmesan cheese, and Caesar dressing."
+    },
+    {
+      "foodName": "Croissant",
+      "foodImage": "croissant.jpg",
+      "foodCategory": "Bakery",
+      "quantity": 1,
+      "price": 3.49,
+      "addBy": {
+        "name": "Sophia Garcia",
+        "email": "sophia@example.com"
+      },
+      "foodOrigin": "France",
+      "description": "Flaky and buttery French pastry made from layered dough, perfect for breakfast or as a snack."
+    },
+    {
+      "foodName": "Hamburger",
+      "foodImage": "hamburger.jpg",
+      "foodCategory": "Burger",
+      "quantity": 1,
+      "price": 9.99,
+      "addBy": {
+        "name": "Michael Davis",
+        "email": "michael@example.com"
+      },
+      "foodOrigin": "United States",
+      "description": "Classic American sandwich consisting of a grilled beef patty, topped with lettuce, tomato, onion, cheese, and condiments, served on a bun."
+    }
+  ]
+  

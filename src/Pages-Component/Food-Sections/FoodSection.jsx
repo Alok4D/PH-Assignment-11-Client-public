@@ -1,28 +1,31 @@
 
 
 
-// import Banner from "../Banner/Banner";
+import Banner from "../Banner/Banner";
+
+import { useLoaderData } from "react-router-dom";
+import CardData from "../Card/CardData";
 
 
 const FoodSection = () => {
 
-  
-
+  const foodData = useLoaderData();
+ 
     return (
         <div className="mt-8 mb-8">
 
-         {/* <Banner></Banner> */}
+         <Banner></Banner>
 
       <div className="mt-8 mb-8">
-        <h2 className="text-[#131313] text-[50px] text-center">Top Foods Section </h2>
+        <h2 className="text-[#131313] text-[50px] text-center">Top Foods Section : {foodData.length}</h2>
       </div>
 
   
-    {/* <div className="grid sm:grid-cols-1 lg:grid-cols-3 gap-5 lg:w-[80%] mx-auto">
+    <div className="grid sm:grid-cols-1 lg:grid-cols-3 gap-5 lg:w-[80%] mx-auto">
         {
-            craftData.map(cardList => <Card key={cardList._id} cardList={cardList}></Card>)
+            foodData.map(cardList => <CardData key={cardList._id} cardList={cardList}></CardData>)
         }
-      </div> */}
+      </div>
 
        {/* <div>
        <Categories></Categories>
