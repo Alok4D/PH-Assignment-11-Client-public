@@ -1,25 +1,30 @@
-import { useContext, useEffect } from "react";
-import { AuthContext } from "../Auth-Provider/AuthProvaider";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
-import { Helmet } from "react-helmet";
+// import { useContext, useEffect } from "react";
+// import { AuthContext } from "../Auth-Provider/AuthProvaider";
+// import { Link, useLocation, useNavigate } from "react-router-dom";
+// import { toast } from "react-toastify";
+// import { Helmet } from "react-helmet";
 
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import { useContext } from "react";
+import { AuthContext } from "../Auth-Provider/AuthProvider";
+import { Link, Navigate } from "react-router-dom";
+import { toast } from "react-toastify";
+
+// import AOS from 'aos';
+// import 'aos/dist/aos.css';
 
 
 const Login = () => {
 
-  useEffect(() => {
-    AOS.init({
-      duration: 2000,
-    });
-  }, []);
+//   useEffect(() => {
+//     AOS.init({
+//       duration: 2000,
+//     });
+//   }, []);
 
 
-  const location = useLocation()
-  console.log(location);
-  const Navigate = useNavigate()
+//   const location = useLocation()
+//   console.log(location);
+//   const Navigate = useNavigate()
    
    const {loginUser, googleLogin, setUser,  githubLogin} = useContext(AuthContext)
  
@@ -66,7 +71,7 @@ const Login = () => {
 
     return (
        <div className="hero w-[80%] mx-auto rounded-xl min-h-screen bg-base-200 mb-8 mt-8" data-aos="zoom-in">
-        <Helmet><title>Login Page</title></Helmet>
+        {/* <Helmet><title>Login Page</title></Helmet> */}
   <div className="hero-content flex-col lg:flex-row-reverse">
 
     <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">

@@ -1,6 +1,11 @@
+// import { createContext, useEffect, useState } from "react";
+// import { createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, GithubAuthProvider, signInWithPopup, onAuthStateChanged, signOut, updateProfile  } from "firebase/auth";
+// import { auth } from "../Firebase/Firebase.init";
+
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import { GoogleAuthProvider } from "firebase/auth/cordova";
 import { createContext, useEffect, useState } from "react";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, GithubAuthProvider, signInWithPopup, onAuthStateChanged, signOut, updateProfile  } from "firebase/auth";
-import { auth } from "../Firebase/Firebase.init";
+import { auth } from "../Pages-Component/FireBase/Firebase.init";
 
 export const AuthContext = createContext(null)
 
@@ -10,7 +15,7 @@ const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null)
 
     const googleProvider = new GoogleAuthProvider()
-    const githubProvider = new GithubAuthProvider();
+    // const githubProvider = new GithubAuthProvider();
 
 
     const registerUser = (email, password) =>{
@@ -28,10 +33,10 @@ const AuthProvider = ({ children }) => {
         return signInWithPopup(auth, googleProvider)
     }
 
-    // github
-    const githubLogin = () => {
-        return signInWithPopup(auth, githubProvider)
-    }
+    // // github
+    // const githubLogin = () => {
+    //     return signInWithPopup(auth, githubProvider)
+    // }
 
 
     const logOut = () => {
@@ -45,7 +50,7 @@ const AuthProvider = ({ children }) => {
         setUser,
         googleLogin,
         logOut,
-        githubLogin
+        // githubLogin
        
      
         

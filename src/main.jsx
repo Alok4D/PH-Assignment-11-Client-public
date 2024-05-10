@@ -11,6 +11,11 @@ import Error from './Error-Pages/Error';
 import FoodSection from './Pages-Component/Food-Sections/FoodSection';
 import FoodAddItem from './Pages-Component/Food-Add-Item/FoodAddItem';
 import CardDetails from './Pages-Component/Card-Details/CardDetails';
+import Login from './Login/Login';
+import Register from './Register/Register';
+import AuthProvider from './Auth-Provider/AuthProvider';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const router = createBrowserRouter([
   {
@@ -31,13 +36,24 @@ const router = createBrowserRouter([
       {
         path: '/foodAddItem',
         element: <FoodAddItem></FoodAddItem>,
-      }
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/register",
+        element: <Register></Register>,
+      },
     ]
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-   <RouterProvider router={router} />
+   <AuthProvider>
+    <RouterProvider router={router} />
+   </AuthProvider>
+   <ToastContainer></ToastContainer>
   </React.StrictMode>,
 )

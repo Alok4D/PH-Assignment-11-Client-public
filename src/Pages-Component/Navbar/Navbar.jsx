@@ -1,10 +1,13 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import navLogo from '../../assets/Nav-Logo/logo.svg';
+import { useContext } from "react";
+import { AuthContext } from "../../Auth-Provider/AuthProvider";
 
 
 
 const Navbar = () => {
-  
+  const { user, logOut } = useContext(AuthContext);
+  console.log(user);
 const links = (
 
   <>
@@ -59,7 +62,7 @@ const links = (
 
      <div className="flex gap-4 justify-center items-center cursor-pointer">
      <img src={navLogo} alt="industrial-logo-image"  />
-        {/* <h2 className="lg:text-[40px] font-extrabold">Vactor</h2> */}
+     
      </div>
 
      
@@ -70,7 +73,7 @@ const links = (
       </div>
       <div className="lg:navbar-end lg:gap-4 gap-2 ">
       <a className="btn bg-[#F60] text-[16px]">Login</a>
-      {/* {user ? (
+      {user ? (
           <div className="flex gap-4 justify-center items-center">
            
 
@@ -78,7 +81,7 @@ const links = (
             <img className="border rounded-full h-[45px]" src={user.photoURL} />
           </div>
             <button onClick={() => logOut()} className="btn bg-[#F60] text-[16px]">Log Out</button></div>) : 
-            (<Link to="/login"><a className="btn bg-[#F60] text-[16px]">Login</a></Link>)} */}
+            (<Link to="/login"><a className="btn bg-[#F60] text-[16px]">Login</a></Link>)}
       </div>
     </div>
   );
