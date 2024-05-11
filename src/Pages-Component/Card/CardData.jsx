@@ -4,14 +4,14 @@ import { Link } from "react-router-dom";
 
 const CardData = ({ cardList }) => {
 
-  const {name, photo, foodOrigin, _id, foodName, price, email, description, quantity, subcategory} = cardList;
-
+  const { photo,  _id, foodName, price, subcategory} = cardList;
+  console.log(_id);
   return (
     <div className="max-w-[350px] space-y-4 rounded-lg bg-white p-6 shadow-lg md:w-[350px] dark:bg-[#18181B]">
      <img src={photo} alt="Industrial-Products-Images" className="border rounded-xl h-[190px] " />
       <div className="grid gap-2">
         <h1 className="text-lg font-semibold ">{foodName}</h1>
-        <p className="text-sm text-gray-500 dark:text-white/60 flex-grow">{description}</p>
+        <p className="text-sm text-gray-500 dark:text-white/60 flex-grow">#{subcategory}</p>
         <div className="text-lg font-semibold">${price}</div>
       </div>
       <div className="flex gap-4">

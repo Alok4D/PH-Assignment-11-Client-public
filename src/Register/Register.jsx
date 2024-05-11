@@ -1,6 +1,4 @@
-// import { useContext, useEffect, useState } from "react";
-// import { FaEye, FaEyeSlash } from "react-icons/fa";
-// import { Link } from "react-router-dom";
+
 
 import { useContext, useState } from "react";
 import { AuthContext } from "../Auth-Provider/AuthProvider";
@@ -9,9 +7,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 
-// import { AuthContext } from "../Auth-Provider/AuthProvaider";
-// import { toast, ToastContainer } from "react-toastify";
-// import { Helmet } from "react-helmet";
+
 
 
 const Register = () => {
@@ -102,7 +98,7 @@ const Register = () => {
             <input name='name' type="text" placeholder="Type here" className="input input-bordered w-full " required/>
            </div>
            <div>
-           <p>Photo</p>
+           <p>Photo URL</p>
             <input name='photo' type="text" placeholder="Type here" className="input input-bordered w-full " required/>
            </div>
            <div>

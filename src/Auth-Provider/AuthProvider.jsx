@@ -1,9 +1,5 @@
-// import { createContext, useEffect, useState } from "react";
-// import { createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, GithubAuthProvider, signInWithPopup, onAuthStateChanged, signOut, updateProfile  } from "firebase/auth";
-// import { auth } from "../Firebase/Firebase.init";
-
 import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
-import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth/cordova";
+import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import { auth } from "../Pages-Component/FireBase/Firebase.init";
 
@@ -31,6 +27,7 @@ const AuthProvider = ({ children }) => {
 
     const googleLogin = () =>{
         return signInWithPopup(auth, googleProvider)
+        // console.log("My name is google");
     }
 
     // github
