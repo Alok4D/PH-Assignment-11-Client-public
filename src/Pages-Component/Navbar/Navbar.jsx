@@ -14,16 +14,19 @@ const links = (
     <li className=" rounded-xl "><NavLink to="/">Home</NavLink></li>
     <li className=" rounded-xl "><NavLink to="/allFoods">All Foods</NavLink></li>
     <li className=" rounded-xl"><NavLink to="/gallery">Gallery</NavLink></li>
+   {
+    user &&
     <li>
-        <details className="z-10">
-          <summary className="rounded-xl"><NavLink to="/myProfile">My Profile</NavLink></summary>
-          <ul className="p-2 w-52 bg-red-500">
-            <li><a>My added food items</a></li>
-            <li><NavLink to="/foodAddItem">Add a food item</NavLink></li>
-            <li><a>My ordered food items</a></li>
-          </ul>
-        </details>
-    </li>
+    <details className="z-10">
+      <summary className="rounded-xl"><NavLink to="/myProfile">My Profile</NavLink></summary>
+      <ul className="p-2 w-52 bg-red-500">
+        <li><a>My added food items</a></li>
+        <li><NavLink to="/foodAddItem">Add a food item</NavLink></li>
+        <li><a>My ordered food items</a></li>
+      </ul>
+    </details>
+</li>
+   }
       
      
   </>

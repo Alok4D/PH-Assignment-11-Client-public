@@ -16,6 +16,7 @@ import Register from './Register/Register';
 import AuthProvider from './Auth-Provider/AuthProvider';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import AllCard from './Pages-Component/All-Food-Card/AllCard';
 
 const router = createBrowserRouter([
   {
@@ -45,6 +46,11 @@ const router = createBrowserRouter([
         path: "/register",
         element: <Register></Register>,
       },
+      {
+        path: '/allFoods',
+        element: <AllCard></AllCard>,
+        loader: () => fetch('http://localhost:5000/food')
+      }
     ]
   },
 ]);
