@@ -17,6 +17,8 @@ import AuthProvider from './Auth-Provider/AuthProvider';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import AllCard from './Pages-Component/All-Food-Card/AllCard';
+import PurchaseProduct from './Pages-Component/Purchase-Pages/PurchaseProduct';
+import Gallery from './Gallery/Gallery';
 
 const router = createBrowserRouter([
   {
@@ -35,6 +37,12 @@ const router = createBrowserRouter([
         loader: ({params}) => fetch(`http://localhost:5000/food/${params.id}`)
       },
       {
+        path: '/purchaseProduct',
+        element: <PurchaseProduct></PurchaseProduct>,
+        loader: ({params}) => fetch(`http://localhost:5000/food/${params.id}`)
+      },
+
+      {
         path: '/foodAddItem',
         element: <FoodAddItem></FoodAddItem>,
       },
@@ -50,6 +58,10 @@ const router = createBrowserRouter([
         path: '/allFoods',
         element: <AllCard></AllCard>,
         loader: () => fetch('http://localhost:5000/food')
+      },
+      {
+        path: '/gallery',
+        element: <Gallery></Gallery>
       }
     ]
   },
