@@ -16,16 +16,16 @@ const links = (
     <li className=" rounded-xl"><NavLink to="/gallery">Gallery</NavLink></li>
    {
     user &&
-    <li>
-    <details className="z-10">
-      <summary className="rounded-xl"><NavLink to="/myProfile">My Profile</NavLink></summary>
-      <ul className="p-2 w-52 bg-red-500">
-        <li><a>My added food items</a></li>
-        <li><NavLink to="/foodAddItem">Add a food item</NavLink></li>
-        <li><a>My ordered food items</a></li>
-      </ul>
-    </details>
-</li>
+     <li>
+        <details className="z-10">
+          <summary className="rounded-xl"><NavLink to="/myProfile">My Profile</NavLink></summary>
+          <ul className="p-2 w-52 bg-red-500">
+            <li><a>My added food items</a></li>
+            <li><NavLink to="/foodAddItem">Add a food item</NavLink></li>
+            <li><a>My ordered food items</a></li>
+          </ul>
+        </details>
+    </li>
    }
       
      
@@ -36,7 +36,7 @@ const links = (
 
 
   return (
-    <div className="navbar bg-base-100 w-[100%] m-auto lg:mt-[68px] mt-6 lg:w-[80%] mx-auto">
+    <div className="navbar bg-base-100 w-[100%] m-auto lg:mt-[68px] mt-6 ">
       <div className="navbar-start max-sm:w-[74%]">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -45,20 +45,16 @@ const links = (
               className="h-5 w-5"
               fill="none"
               viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
+              stroke="currentColor">
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="2"
-                d="M4 6h16M4 12h8m-8 6h16"
-              />
+                d="M4 6h16M4 12h8m-8 6h16"/>
             </svg>
           </div>
 
-          <ul
-            tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] lg:p-2 shadow bg-base-100 rounded-box lg:w-52">
+          <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] lg:p-2 shadow bg-base-100 rounded-box lg:w-52">
             {links}
           </ul>
         </div>

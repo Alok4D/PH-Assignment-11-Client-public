@@ -18,7 +18,7 @@ const CardDetails = () => {
 
 
     return (
-        <div className="grid lg:grid-cols-2 grid-cols-1 gap-12 mt-[52px] mb-[52px] w-[80%] mx-auto ">
+        <div className="grid lg:grid-cols-2 grid-cols-1 gap-12 mt-[52px] mb-[52px] ">
        
           
       
