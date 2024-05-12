@@ -18,11 +18,11 @@ const links = (
     user &&
      <li>
         <details className="z-10">
-          <summary className="rounded-xl"><NavLink to="/myProfile">My Profile</NavLink></summary>
+          <summary className="rounded-xl">My Profile</summary>
           <ul className="p-2 w-52 bg-red-500">
           <li><NavLink to="/myListFoods">My added food items</NavLink></li>
             <li><NavLink to="/foodAddItem">Add a food item</NavLink></li>
-            <li><a>My ordered food items</a></li>
+            <li>My ordered food items</li>
           </ul>
         </details>
     </li>

@@ -21,19 +21,20 @@ const MyList = () => {
             confirmButtonText: "Yes, delete it!"
           }).then((result) => {
             if (result.isConfirmed) {
-              
-              fetch(`https://assignment-ten-server-alpha-one.vercel.app/myCardDelete/${_id}`,{
+              console.log('Delete Confirmed');
+
+              fetch(`http://localhost:5000/food/${_id}` , {
                 method: 'DELETE'
               })
               .then(res => res.json())
               .then(data => {
                 console.log(data);
-                if(data.deletedCount > 0){
-                    Swal.fire({
-                        title: "Deleted!",
-                        text: "Your Spot has been deleted.",
-                        icon: "success"
-                      });
+                if(data.deletedCount > 0) {
+                  Swal.fire({
+                    title: "Deleted!",
+                    text: "Your food has been deleted.",
+                    icon: "success"
+                  });
                 }
               })
             }
@@ -67,7 +68,9 @@ const MyList = () => {
       </div>
       <div className="flex gap-4">
 
-      <button onClick={()=>handleDelete(item._id)} className="btn text-sm bg-slate-500">Delete</button>
+      <button onClick={() => handleDelete(item._id)} className="btn text-sm bg-slate-500">Delete</button>
+
+
                                         <Link to={`/update/${item._id}`}>
                                             <button className="btn bg-slate-500">Update</button>
                                         </Link>
