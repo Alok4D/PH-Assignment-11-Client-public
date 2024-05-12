@@ -29,7 +29,7 @@ const FoodSection = () => {
        {/* <div>
        <Categories></Categories>
        </div> */}
-     <div className="w-[10%] mx-auto mt-8">
+     <div className="w-[15%] mx-auto mt-8">
       <Link to="/allFoods">
       <button className="btn btn-secondary btn-block">See All Foods</button>
       </Link>
