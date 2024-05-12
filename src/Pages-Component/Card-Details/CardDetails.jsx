@@ -50,7 +50,7 @@ const CardDetails = () => {
 
 
     <div className="mt-3">
-    <Link to={`/purchaseProduct/${_id}`}>
+    <Link to="/purchasePage">
     <button className="btn bg-[#F60]">Purchase</button>
     </Link>
     </div>

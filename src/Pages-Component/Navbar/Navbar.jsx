@@ -20,7 +20,7 @@ const links = (
         <details className="z-10">
           <summary className="rounded-xl"><NavLink to="/myProfile">My Profile</NavLink></summary>
           <ul className="p-2 w-52 bg-red-500">
-            <li><a>My added food items</a></li>
+          <li><NavLink to="/myListFoods">My added food items</NavLink></li>
             <li><NavLink to="/foodAddItem">Add a food item</NavLink></li>
             <li><a>My ordered food items</a></li>
           </ul>

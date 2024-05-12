@@ -21,7 +21,7 @@ const ShowCard = ({allCard}) => {
      
         
       </div>
-    </div>
+        </div>
     );
 };
 
