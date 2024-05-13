@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-fade";
+import { Link } from "react-router-dom";
 
 
 const Banner = () => {
@@ -31,8 +32,10 @@ const Banner = () => {
                         <h2 className='text-6xl font-bold'>ORDER FOOD DELIVERY</h2>
                         <p>There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
                         <div>
-                            <button className="btn btn-primary mr-5">Discover More</button>
-                            <button className="btn btn-outline btn-secondary">Latest Project</button>
+                            
+                        <Link to="/allFoods">
+                        <button className="btn btn-outline btn-secondary">Explore Now</button>
+                        </Link>
                         </div>
                     </div>
                 </div>
@@ -51,8 +54,9 @@ const Banner = () => {
                         <h2 className='text-6xl font-bold'>WE GET WHAT YOU LOVE</h2>
                         <p>There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
                         <div>
-                            <button className="btn btn-primary mr-5">Discover More</button>
-                            <button className="btn btn-outline btn-secondary">Latest Project</button>
+                        <Link to="/allFoods">
+                        <button className="btn btn-outline btn-secondary">Explore Now</button>
+                        </Link>
                         </div>
                     </div>
                 </div>
@@ -71,8 +75,9 @@ const Banner = () => {
                         <h2 className='text-6xl font-bold'>ORDER TAKEAWAY ONLINE</h2>
                         <p>There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
                         <div>
-                            <button className="btn btn-primary mr-5">Discover More</button>
-                            <button className="btn btn-outline btn-secondary">Latest Project</button>
+                        <Link to="/allFoods">
+                        <button className="btn btn-outline btn-secondary">Explore Now</button>
+                        </Link>
                         </div>
                     </div>
                 </div>
@@ -93,8 +98,9 @@ const Banner = () => {
                         <h2 className='text-6xl font-bold'>Affordable Price For Foods Servicing</h2>
                         <p>There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
                         <div>
-                            <button className="btn btn-primary mr-5">Discover More</button>
-                            <button className="btn btn-outline btn-secondary">Latest Project</button>
+                        <Link to="/allFoods">
+                        <button className="btn btn-outline btn-secondary">Explore Now</button>
+                        </Link>
                         </div>
                     </div>
                 </div>

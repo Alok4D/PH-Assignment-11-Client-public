@@ -1,4 +1,4 @@
-import GalleryItem from "../GalleryTest/GalleryTest";
+// import GalleryItem from "../GalleryTest/GalleryTest";
 
 
 
@@ -6,7 +6,7 @@ import GalleryItem from "../GalleryTest/GalleryTest";
 const Gallery = () => {
     return (
         <div className="mt-10 mb-10">
-			<GalleryItem></GalleryItem>
+			{/* <GalleryItem></GalleryItem> */}
 			<div>
 			<div className=" w-full h-[200px] rounded-xl bg-[url('https://png.pngtree.com/background/20210711/original/pngtree-bread-minimalist-literary-white-food-poster-background-picture-image_1121500.jpg')]">
 				<h2 className="text-center text-4xl font-bold text-red-600 pt-20">Home ! Foods Gallery</h2>

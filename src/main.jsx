@@ -19,8 +19,10 @@ import 'react-toastify/dist/ReactToastify.css';
 import AllCard from './Pages-Component/All-Food-Card/AllCard';
 import Gallery from './Gallery/Gallery';
 import PurchaseProduct from './Pages-Component/Purchase-Pages/PurchaseProduct';
-import MyCardList from './Pages-Component/MyCardList/MyCardList';
+// import MyCardList from './Pages-Component/MyCardList/MyCardList';
 import Update from './Pages-Component/Update/Update';
+import App from './App';
+import ProtectedRoute from './Protected-Routes/ProtectedRoute';
 
 const router = createBrowserRouter([
   {
@@ -35,15 +37,22 @@ const router = createBrowserRouter([
       },
       {
         path: '/cardDetails/:id',
-        element: <CardDetails></CardDetails>,
+        element: <ProtectedRoute>
+          <CardDetails></CardDetails>
+        </ProtectedRoute>,
         loader: ({params}) => fetch(`http://localhost:5000/food/${params.id}`)
       },
 
       {
-        path: '/myListFoods',
-        element: <MyCardList></MyCardList>,
+        path:'/myListFoods',
+        element: <App></App>,
         loader: () => fetch('http://localhost:5000/food')
       },
+      // {
+      //   path: '/myListFoods',
+      //   element: <MyCardList></MyCardList>,
+      //   loader: () => fetch('http://localhost:5000/food')
+      // },
       {
         path: '/update/:id',
         element: <Update></Update>,

@@ -1,15 +1,9 @@
-import { useContext, useEffect, useState } from "react";
-import { AuthContext } from "../../Auth-Provider/AuthProvider";
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const MyList = () => {
 
-    const {user} = useContext(AuthContext)
-    const [items, setItems] = useState([])
-    console.log(items);
-
-   
+const FoodAddedCard = ({food, foods, setFoods}) => {
+    const {photo, itemName, description, price, _id} = food;
 
     //
     const handleDelete =_id =>{
@@ -37,44 +31,31 @@ const MyList = () => {
                     title: "Deleted!",
                     text: "Your food has been deleted.",
                     icon: "success"
-                  });
+                  })
+                  const remaining = food.filter(fod => fod._id !== _id);
+                  console.log(remaining);
                 }
               })
             }
           });
     }
-    //
-    
-    useEffect(()=>{
-        fetch(`http://localhost:5000/food/email/${user?.email}`)
-        .then(res => res.json())
-        .then(data => {
-            setItems(data);
-            console.log(data);
-        })
-    },[user])
-    console.log(items);
+
 
     return (
         <div>
-        {/* <Helmet><title>My Art & Craft List</title></Helmet> */}
-          <div className="grid sm:grid-cols-1 lg:grid-cols-3 gap-5 lg:w-[80%] mx-auto">
-              {
-                  items.map(item =><div key={item._id}>
-
-                       <div className="max-w-[350px] space-y-4 rounded-lg bg-white p-6 shadow-lg md:w-[350px] dark:bg-[#18181B] mt-8 mb-8">
-        <img src={item.photo} alt="Industrial-Products-Images" className="border rounded-xl h-[190px] " />
+              <div className="max-w-[350px] space-y-4 rounded-lg bg-white p-6 shadow-lg md:w-[350px] dark:bg-[#18181B] mt-8 mb-8">
+        <img src={photo} alt="Industrial-Products-Images" className="border rounded-xl h-[190px] " />
       <div className="grid gap-2">
-        <h1 className="text-lg font-semibold ">{item.itemName}</h1>
-        <p className="text-sm text-gray-500 dark:text-white/60 flex-grow">{item.description}</p>
-        <div className="text-lg font-semibold">${item.price}</div>
+        <h1 className="text-lg font-semibold ">{itemName}</h1>
+        <p className="text-sm text-gray-500 dark:text-white/60 flex-grow">{description}</p>
+        <div className="text-lg font-semibold">${price}</div>
       </div>
       <div className="flex gap-4">
 
-      <button onClick={() => handleDelete(item._id)} className="btn text-sm bg-slate-500">Delete</button>
+      <button onClick={() => handleDelete(_id)} className="btn text-sm bg-slate-500">Delete</button>
 
 
-                                        <Link to={`/update/${item._id}`}>
+                                        <Link to={`/update/${_id}`}>
                                             <button className="btn bg-slate-500">Update</button>
                                         </Link>
 
@@ -86,12 +67,8 @@ const MyList = () => {
         
       </div>
                       </div>
-                  </div>)
-              }
-          </div>
-      </div>
+        </div>
     );
 };
 
-export default MyList;
-
+export default FoodAddedCard;

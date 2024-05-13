@@ -45,7 +45,7 @@ const FoodAddItem = () => {
     }
 
     return (
-        <div className="pt-10 w-[80%] mx-auto mb-10">
+        <div className="pt-10  mb-10">
          
 
         <div className="shadow-lg p-5 border dark:bg-[#1a2641d5] rounded-xl">

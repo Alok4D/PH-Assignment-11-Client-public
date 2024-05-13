@@ -3,6 +3,7 @@ import { useContext} from "react";
 import { AuthContext } from "../Auth-Provider/AuthProvider";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { Helmet } from "react-helmet";
 
 
 const Login = () => {
@@ -43,7 +44,7 @@ const Login = () => {
 
     return (
        <div className="hero  rounded-xl min-h-screen bg-base-200 mb-8 mt-8" >
-        {/* <Helmet><title>Login Page</title></Helmet> */}
+        <Helmet><title>Login Page</title></Helmet>
   <div className="hero-content flex-col lg:flex-row-reverse">
 
     <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">

@@ -1,6 +1,4 @@
 
-
-
 import {  Link, useLoaderData } from "react-router-dom";
 import { toast } from "react-toastify";
 
@@ -17,16 +15,12 @@ const Update = () => {
         e.preventDefault();
         const form = e.target;
         const name = form.name.value;
-       
         const photo = form.photo.value;
         const subcategory = form.subcategory.value;
         const price = form.price.value;
         const foodOrigin = form.foodOrigin.value;
         const description = form.description.value;
-       
         const quantity = form.quantity.value;
-       
-
         const updatedFood = {name, photo,   price,  description, foodOrigin, subcategory, quantity}
         console.log(updatedFood);
 
