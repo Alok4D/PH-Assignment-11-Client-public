@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Auth-Provider/AuthProvider";
 import { Link} from "react-router-dom";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 const MyList = () => {
 
@@ -57,7 +58,7 @@ const MyList = () => {
 
     return (
         <div>
-        {/* <Helmet><title>My Art & Craft List</title></Helmet> */}
+        <Helmet><title>My Added Food Items</title></Helmet>
           <div className="grid sm:grid-cols-1 lg:grid-cols-3 gap-5 lg:w-[80%] mx-auto">
               {
                   items.map(item =><div key={item._id}>

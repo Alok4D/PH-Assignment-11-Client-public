@@ -1,4 +1,5 @@
 
+import { Helmet } from "react-helmet";
 import {  Link, useLoaderData } from "react-router-dom";
 import { toast } from "react-toastify";
 
@@ -49,6 +50,7 @@ const Update = () => {
         <div>
            
             <div  className=" mb-10 mt-10 w-[80%] mx-auto ">
+                <Helmet><title>Update Foods Item Page</title></Helmet>
                 <form onSubmit={handleUpdateFood} className=" w-full p-5 bg-gray-300 rounded-lg">
                     <h1 className="md:text-5xl text-[27px] font-bold text-center mb-4">Update Foods Item</h1>
                     <Link to={"/myListFoods"}>

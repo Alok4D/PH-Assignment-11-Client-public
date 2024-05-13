@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet';
 import Swal from 'sweetalert2'
 
 
@@ -46,7 +47,7 @@ const FoodAddItem = () => {
 
     return (
         <div className="pt-10  mb-10">
-         
+         <Helmet><title>Add a food item form</title></Helmet>
 
         <div className="shadow-lg p-5 border dark:bg-[#1a2641d5] rounded-xl">
           {/* Heading */}

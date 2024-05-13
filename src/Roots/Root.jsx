@@ -8,7 +8,7 @@ const Root = () => {
     return (
         <div>
              <Helmet>
-             <title>Restaurant Management Website</title>
+             <title>Fooddy24/7-Food Delivery</title>
           </Helmet>
             <div className="w-[80%] mx-auto">
             <Navbar></Navbar>

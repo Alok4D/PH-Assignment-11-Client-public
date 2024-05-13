@@ -1,5 +1,6 @@
 
 
+import { Helmet } from "react-helmet";
 import { Link, useLoaderData } from "react-router-dom";
 
 
@@ -20,7 +21,7 @@ const CardDetails = () => {
     return (
         <div className="grid lg:grid-cols-2 grid-cols-1 gap-12 mt-[52px] mb-[52px] ">
        
-          
+          <Helmet><title>Food Details Page</title></Helmet>
       
 
     <div className="flex justify-center items-center bg-slate-200 border rounded-xl">
