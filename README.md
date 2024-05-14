@@ -23,7 +23,9 @@ Currently, two official plugins are available:
 ## Our projact Fruture
 
 - home page
-- All Art & Craft Items page
-- My Art & Craft List page
+2. Home,
+3. All Foods,
+4. Gallery,
+6. My Profile.
 - login page
 - Register page
