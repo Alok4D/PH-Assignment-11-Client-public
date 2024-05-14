@@ -27,7 +27,7 @@ const MyList = () => {
             if (result.isConfirmed) {
               console.log('Delete Confirmed');
 
-              fetch(`http://localhost:5000/food/${_id}` , {
+              fetch(`https://restaurant-management-website-server.vercel.app/food/${_id}` , {
                 method: 'DELETE'
               })
               .then(res => res.json())
@@ -47,7 +47,7 @@ const MyList = () => {
     //
     
     useEffect(()=>{
-        fetch(`http://localhost:5000/food/email/${user?.email}`)
+        fetch(`https://restaurant-management-website-server.vercel.app/food/email/${user?.email}`)
         .then(res => res.json())
         .then(data => {
             setItems(data);

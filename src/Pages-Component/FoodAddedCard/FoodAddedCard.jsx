@@ -20,7 +20,7 @@ const FoodAddedCard = ({food, foods, setFoods}) => {
             if (result.isConfirmed) {
               console.log('Delete Confirmed');
 
-              fetch(`http://localhost:5000/food/${_id}` , {
+              fetch(`https://restaurant-management-website-server.vercel.app/food/${_id}` , {
                 method: 'DELETE'
               })
               .then(res => res.json())

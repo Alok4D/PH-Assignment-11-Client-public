@@ -8,28 +8,7 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 
 
-
-
-
 const Register = () => {
-
-    // useEffect(() => {
-    //     AOS.init({
-    //       duration: 2000,
-    //     });
-    //   }, []);
-
-
-    // useEffect(() => {
-    //     const clear = setInterval(() => {
-    //         console.log("I am called!");
-    //     }, 1000)
-
-    //     return () => {
-    //         clearInterval(clear)
-    //     }
-    // })
-
 
     const {registerUser, setUser} = useContext(AuthContext)
     const [error, setError] = useState('');
@@ -61,22 +40,15 @@ const Register = () => {
             setError("Password didn't match")
             return
         }
-
-
-        // reset error
+     
         setError('');
 
 
 
-        console.log(name, photo, email, password, confirmPassword);
+        // console.log(name, photo, email, password, confirmPassword);
         registerUser(email, password, name)
         .then(result => {
             toast.success('User Create Successfully!')
-           // update profile
-        //    updateProfile(result.user, {
-        //     displayName: name,
-        //     photoURL: photo,
-        // })
             setUser(result.user)
         })
         .catch(error => {
