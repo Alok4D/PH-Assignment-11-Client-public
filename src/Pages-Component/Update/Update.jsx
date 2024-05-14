@@ -113,6 +113,11 @@ const Update = () => {
                                 <label className="input input-bordered flex items-center gap-2">
                                     <input type="text" name="quantity" defaultValue={quantity} placeholder="Quantity" required/>
                                 </label>
+                            {/* <div className="mb-6">
+                                <h3 className="font-bold">Quantity :</h3>
+                                <label className="input input-bordered flex items-center gap-2">
+                                    <input type="text" name="quantity" defaultValue={quantity} placeholder="Quantity" required/>
+                                </label> */}
                                 
                             </div>
 
