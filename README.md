@@ -23,9 +23,9 @@ Currently, two official plugins are available:
 ## Our projact Fruture
 
 - home page
-2. Home,
-3. All Foods,
-4. Gallery,
-6. My Profile.
+- Home,
+- All Foods,
+- Gallery,
+- My Profile.
 - login page
 - Register page
