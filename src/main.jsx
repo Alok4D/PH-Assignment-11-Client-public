@@ -21,7 +21,7 @@ import Gallery from './Gallery/Gallery';
 import PurchaseProduct from './Pages-Component/Purchase-Pages/PurchaseProduct';
 import MyCardList from './Pages-Component/MyCardList/MyCardList';
 import Update from './Pages-Component/Update/Update';
-// import App from './App';
+
 import ProtectedRoute from './Protected-Routes/ProtectedRoute';
 
 const router = createBrowserRouter([
@@ -41,11 +41,7 @@ const router = createBrowserRouter([
         loader: ({params}) => fetch(`https://restaurant-management-website-server.vercel.app/food/${params.id}`)
       },
 
-      // {
-      //   path:'/myListFoods',
-      //   element: <App></App>,
-      //   loader: () => fetch('https://restaurant-management-website-server.vercel.app/food')
-      // },
+    
       {
         path: '/myListFoods',
         element: <MyCardList></MyCardList>,
