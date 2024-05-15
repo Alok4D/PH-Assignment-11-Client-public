@@ -6,16 +6,10 @@ import { Link, useLoaderData } from "react-router-dom";
 
 const CardDetails = () => {
 
-
-
     const viewDetail = useLoaderData();
     console.log(viewDetail);
 
-
-
     const {name, photo, foodOrigin, foodName, price,  description, subcategory, _id} = viewDetail;
-
-
 
 
     return (
@@ -28,8 +22,8 @@ const CardDetails = () => {
         <img src={photo} alt="Card Images" className="lg:p-8 p-2 lg:w-[1000px] w-[300px]"/>
     </div>
 <div className="c-details">
-    <span className="text-[#646262] text-[20px]">Item Name : {foodName}</span>
-    <h2 className="text-[#131313] text-[18px]">Description : {description}</h2>
+    <span className=" text-[25px] text-bold mb-4">Food Name : {foodName}</span>
+    <h2 className="text-[#131313] text-[18px] mt-4">Description : {description}</h2>
    
   
     <p className="text-[#131313] mt-3"><span className="text-[#131313] text-[16px]">Price : </span>{price}</p>

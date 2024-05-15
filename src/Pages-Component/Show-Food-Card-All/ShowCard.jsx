@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const ShowCard = ({allCard}) => {
     console.log(allCard);
-    const  { photo,  price,  subcategory , quantity, foodName    } = allCard;
+    const  { photo,  price,  subcategory , quantity, foodName  } = allCard;
     return (
         <div className="max-w-[350px] space-y-4 rounded-lg bg-white p-6 shadow-lg md:w-[350px] dark:bg-[#18181B] mt-8 mb-8">
      <img src={photo} alt="Industrial-Products-Images" className="border rounded-xl h-[190px] " />

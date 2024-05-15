@@ -78,7 +78,8 @@ const router = createBrowserRouter([
       },
       {
         path: '/gallery',
-        element: <Gallery></Gallery>
+        element: <Gallery></Gallery>,
+        // loader: () => fetch('https://restaurant-management-website-server.vercel.app/foodPhoto')
       }
     ]
   },
