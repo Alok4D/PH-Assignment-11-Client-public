@@ -8,7 +8,7 @@ import { toast } from "react-toastify";
 const Update = () => {
     
     const food = useLoaderData();
-    console.log(food);
+    // console.log(food);
 
     const {photo, email, foodName, foodOrigin,  price, description,   subcategory, quantity, name, _id}= food;
 
@@ -23,7 +23,7 @@ const Update = () => {
         const description = form.description.value;
         const quantity = form.quantity.value;
         const updatedFood = {name, photo,   price,  description, foodOrigin, subcategory, quantity}
-        console.log(updatedFood);
+        // console.log(updatedFood);
 
         fetch(`https://restaurant-management-website-server.vercel.app/food/${_id}`,{
             method:'PUT',
@@ -34,7 +34,7 @@ const Update = () => {
         })
         .then(res =>res.json())
         .then(data => {
-            console.log(data);
+            // console.log(data);
             if(data.modifiedCount > 0){
                 toast.success("Updated Successfully!")
                 form.reset();

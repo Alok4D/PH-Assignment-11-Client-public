@@ -8,13 +8,13 @@ const MyList = () => {
 
     const {user} = useContext(AuthContext)
     const [items, setItems] = useState([])
-    console.log(items);
+  
 
    
 
     //
     const handleDelete =_id =>{
-        console.log(_id);
+    
         Swal.fire({
             title: "Are you sure?",
             text: "You won't be able to revert this!",
@@ -25,20 +25,21 @@ const MyList = () => {
             confirmButtonText: "Yes, delete it!"
           }).then((result) => {
             if (result.isConfirmed) {
-              console.log('Delete Confirmed');
+              // console.log('Delete Confirmed');
 
               fetch(`https://restaurant-management-website-server.vercel.app/food/${_id}` , {
                 method: 'DELETE'
               })
               .then(res => res.json())
               .then(data => {
-                console.log(data);
                 if(data.deletedCount > 0) {
                   Swal.fire({
                     title: "Deleted!",
                     text: "Your food has been deleted.",
                     icon: "success"
                   });
+                  const remaining = items?.filter( item => item._id !== _id)
+                  setItems(remaining);
                 }
               })
             }
@@ -51,10 +52,10 @@ const MyList = () => {
         .then(res => res.json())
         .then(data => {
             setItems(data);
-            console.log(data);
+            
         })
     },[user])
-    console.log(items);
+    
 
     return (
         <div>

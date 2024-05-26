@@ -6,7 +6,7 @@ import { useContext } from "react";
 
 
 const ProtectedRoute = ({children}) => {
-    console.log(children);
+    // console.log(children);
 
     const locationRoutes  = useLocation()
 

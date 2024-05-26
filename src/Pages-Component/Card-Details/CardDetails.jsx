@@ -7,7 +7,7 @@ import { Link, useLoaderData } from "react-router-dom";
 const CardDetails = () => {
 
     const viewDetail = useLoaderData();
-    console.log(viewDetail);
+    
 
     const {name, photo, foodOrigin, foodName, price,  description, subcategory, _id} = viewDetail;
 
@@ -45,7 +45,7 @@ const CardDetails = () => {
 
 
     <div className="mt-3">
-    <Link to="/purchasePage">
+    <Link to={`/purchasePage/${_id}`}>
     <button className="btn bg-[#F60]">Purchase</button>
     </Link>
     </div>

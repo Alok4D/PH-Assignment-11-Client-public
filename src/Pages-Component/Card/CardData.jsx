@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const CardData = ({ cardList }) => {
 
   const { photo,  _id, foodName, price, subcategory} = cardList;
-  console.log(_id);
+  
   return (
     <div className="max-w-[350px] space-y-4 rounded-lg bg-white p-6 shadow-lg md:w-[350px] dark:bg-[#18181B]">
      <img src={photo} alt="Industrial-Products-Images" className="border rounded-xl h-[190px] " />

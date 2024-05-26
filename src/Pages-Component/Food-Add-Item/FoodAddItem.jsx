@@ -1,8 +1,11 @@
+import { useContext } from 'react';
 import { Helmet } from 'react-helmet';
 import Swal from 'sweetalert2'
+import { AuthContext } from '../../Auth-Provider/AuthProvider';
 
 
 const FoodAddItem = () => {
+    const {user} = useContext(AuthContext);
     const handleAddFoodItem = event => {
         event.preventDefault();
 
@@ -11,13 +14,14 @@ const FoodAddItem = () => {
         const name = form.name.value;
         const photo = form.photo.value;
         const price = form.price.value;
-        const email = form.email.value;
+        const email = user.email;
         const foodOrigin = form.foodOrigin.value;
         const foodName = form.foodName.value;
         const quantity = form.quantity.value;
         const description = form.description.value;
         const subcategory = form.subcategory.value;
-        const newFood = {name, photo, foodOrigin, foodName, price, email, description, quantity, subcategory}
+        const numberOfPurchase = 0;
+        const newFood = {name, photo, foodOrigin, foodName, price, email, description, quantity, subcategory, numberOfPurchase}
         console.log(newFood);
 
         // send data to the server
@@ -30,7 +34,7 @@ const FoodAddItem = () => {
         })
         .then(res => res.json())
         .then(data => {
-            console.log(data);
+           
             if(data.insertedId){
                 Swal.fire({
                     title: 'success!',
@@ -88,9 +92,8 @@ const FoodAddItem = () => {
                             <div className="mb-6">
                                 <h3 className="font-bold">User Email:</h3>
                                 <label className="input input-bordered flex items-center gap-2">
-                                    <input type="email" name="email" placeholder="Email" required/>
+                                    <input defaultValue={user?.email} readOnly type="email" name="email" placeholder="Email" />
                                 </label>
-                                
                             </div>
                           
                         </div>

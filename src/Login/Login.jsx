@@ -6,10 +6,11 @@ import { toast } from "react-toastify";
 import { Helmet } from "react-helmet";
 
 
+
 const Login = () => {
 
   const location = useLocation()
-  console.log(location);
+  // console.log(location);
   const Navigate = useNavigate()
    
    const {loginUser, googleLogin, setUser} = useContext(AuthContext)
@@ -19,11 +20,12 @@ const Login = () => {
         e.preventDefault()
         const email = e.target.email.value;
         const password = e.target.password.value;
-        console.log(email, password);
+    
         loginUser(email, password)
         .then( () => {
           Navigate(location?.state ? location.state : '/');
         })
+    
     }
 
 

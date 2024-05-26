@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 
 
 const ShowCard = ({allCard}) => {
-    console.log(allCard);
+    // console.log(allCard);
     const  { photo,  price,  subcategory , quantity, foodName  } = allCard;
     return (
-        <div className="max-w-[350px] space-y-4 rounded-lg bg-white p-6 shadow-lg md:w-[350px] dark:bg-[#18181B] mt-8 mb-8">
+        <div className="max-w-[350px] space-y-4 rounded-lg bg-white p-6 shadow-lg md:w-[350px] dark:bg-[#18181B]  mb-10">
      <img src={photo} alt="Industrial-Products-Images" className="border rounded-xl h-[190px] " />
       <div className="grid gap-2">
         <h1 className="text-lg font-semibold ">Food Name : {foodName}</h1>

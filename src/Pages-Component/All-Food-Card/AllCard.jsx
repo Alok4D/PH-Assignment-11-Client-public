@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 const AllCard = () => {
   const allCard = useLoaderData();
-  console.log(allCard);
+ 
 
   const [search, setSearch] = useState("");
   const [foods, setFoods] = useState([]);
@@ -13,15 +13,14 @@ const AllCard = () => {
   const handleFoodsSearch = (e) => {
     e.preventDefault();
     const searchText = e.target.search.value;
-    console.log(searchText);
     setSearch(searchText);
   };
   
   useEffect(() => {
-    fetch(`http://localhost:5000/foods?search=${search}`)
+    fetch(`https://restaurant-management-website-server.vercel.app/foods?search=${search}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        
         setFoods(data);
       });
   }, [search]);
@@ -31,7 +30,14 @@ const AllCard = () => {
       <Helmet>
         <title>Our All Food Items !</title>
       </Helmet>
-      <div className="mt-10 mb-10 bg-slate-300 h-[100px] border rounded-xl">
+      <div>
+      <div className="mt-10 w-full h-[200px] rounded-xl bg-[url('https://png.pngtree.com/background/20210711/original/pngtree-bread-minimalist-literary-white-food-poster-background-picture-image_1121500.jpg')]">
+          <h2 className="text-center text-4xl font-bold text-red-600 pt-20">
+            Our All Food Items
+          </h2>
+        </div>
+      </div>
+      <div className="mt-5 mb-10 bg-slate-300 h-[100px] border rounded-xl">
         <form onSubmit={handleFoodsSearch} className="text-center pt-4">
           <input type="text" name="search" placeholder="search foods"
             className="input input-bordered input-lg w-full max-w-xs mr-2" />
@@ -46,7 +52,7 @@ const AllCard = () => {
           <ShowCard allCard={food} key={food._id}></ShowCard>
         ))}
       </div> :  <div
-        className="grid sm:grid-cols-1 lg:grid-cols-3 gap-5 lg:w-[80%] mx-auto  mt-10"
+        className="grid sm:grid-cols-1 lg:grid-cols-3 gap-5 lg:w-[80%] mx-auto "
         data-aos="zoom-in">
         {allCard.map((allCard) => (
           <ShowCard allCard={allCard} key={allCard._id}></ShowCard>
