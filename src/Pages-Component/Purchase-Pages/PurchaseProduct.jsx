@@ -21,8 +21,7 @@ const PurchaseProduct = () => {
   } = foodPurchase;
   const avQuantity = parseInt(aQuantity);
 
-  // const [foodOder, setFoodOrder] = useState([]);
-  // console.log(foodOder);
+
 
   const handlePurchaseFood = (event) => {
     event.preventDefault();
@@ -85,13 +84,7 @@ const PurchaseProduct = () => {
       });
   };
 
-  // useEffect(() => {
-  //     fetch("https://restaurant-management-website-server.vercel.app/foodPurchase")
-  //       .then((res) => res.json())
-  //       .then((data) => {
-  //         setFoodOrder(data);
-  //       });
-  //   }, []);
+
 
   return (
     <div className="pt-10  mb-10">

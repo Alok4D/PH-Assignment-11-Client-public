@@ -17,20 +17,7 @@ const Navbar = () => {
       <li className=" rounded-xl">
         <NavLink to="/gallery">Gallery</NavLink>
       </li>
-      {/* {
-    user &&
-     <li>
-        <details className="z-10">
-          <summary className="rounded-xl">My Profile</summary>
-          <ul className="p-2 w-52 bg-[#ffbd2f]">
-          <li><NavLink to="/myListFoods">My added food items</NavLink></li>
-            <li><NavLink to="/foodAddItem">Add a food item</NavLink></li>
-            <li><NavLink to="/orderedFood">My ordered food items</NavLink></li>
-            
-          </ul>
-        </details>
-    </li>
-   } */}
+   
     </>
   );
 
@@ -79,9 +66,8 @@ const Navbar = () => {
                 <div
                   tabIndex={0}
                   role="button"
-                  className="btn btn-ghost btn-circle avatar"
-                >
-                  <div className="w-10 rounded-full">
+                  className="btn btn-ghost btn-circle avatar ">
+                  <div className="w-10 rounded-full ">
                     <img
                       className="border rounded-full h-[45px]"
                       src={user.photoURL}
@@ -90,8 +76,7 @@ const Navbar = () => {
                 </div>
                 <ul
                   tabIndex={0}
-                  className="menu menu-sm dropdown-content mt-3 z-30 p-2 shadow bg-base-100 rounded-box w-52"
-                >
+                  className="menu menu-sm dropdown-content mt-3 z-30 p-2 shadow bg-base-100 rounded-box w-52">
                   <li>
                     <NavLink to="/myListFoods">My added food items</NavLink>
                   </li>
@@ -101,15 +86,13 @@ const Navbar = () => {
                   <li>
                     <NavLink to="/orderedFood">My ordered food items</NavLink>
                   </li>
-                  <li>
-                    <button
-                      onClick={() => logOut()}
-                      className="btn bg-[#F60] text-[16px]"
-                    >
-                      Log Out
-                    </button>
-                  </li>
+                
+                    <button onClick={() => logOut()} className="btn bg-[#F60] text-[16px]">Log Out</button>
+                  
                 </ul>
+                <div>
+               
+                </div>
               </div>
            
           

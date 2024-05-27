@@ -10,7 +10,6 @@ import { Helmet } from "react-helmet";
 const Login = () => {
 
   const location = useLocation()
-  // console.log(location);
   const Navigate = useNavigate()
    
    const {loginUser, googleLogin, setUser} = useContext(AuthContext)
