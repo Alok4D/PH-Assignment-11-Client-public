@@ -17,7 +17,6 @@ const Navbar = () => {
       <li className=" rounded-xl">
         <NavLink to="/gallery">Gallery</NavLink>
       </li>
-   
     </>
   );
 
@@ -59,44 +58,41 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1 gap-3">{links}</ul>
       </div>
       <div className="lg:navbar-end lg:gap-4 gap-2 ">
-        {user ? (
-       
-         
-              <div className="dropdown dropdown-end tooltip" data-tip={user.displayName}>
-                <div
-                  tabIndex={0}
-                  role="button"
-                  className="btn btn-ghost btn-circle avatar ">
-                  <div className="w-10 rounded-full ">
-                    <img
-                      className="border rounded-full h-[45px]"
-                      src={user.photoURL}
-                    />
-                  </div>
-                </div>
-                <ul
-                  tabIndex={0}
-                  className="menu menu-sm dropdown-content mt-3 z-30 p-2 shadow bg-base-100 rounded-box w-52">
-                  <li>
-                    <NavLink to="/myListFoods">My added food items</NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="/foodAddItem">Add a food item</NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="/orderedFood">My ordered food items</NavLink>
-                  </li>
-                
-                    <button onClick={() => logOut()} className="btn bg-[#F60] text-[16px]">Log Out</button>
-                  
-                </ul>
-                <div>
-               
-                </div>
+        {user ? (<>
+          <div
+            className="dropdown dropdown-end tooltip"
+            data-tip={user.displayName}
+          >
+            <div
+              tabIndex={0}
+              role="button"
+              className="btn btn-ghost btn-circle avatar "
+            >
+              <div className="w-10 rounded-full ">
+                <img
+                  className="border rounded-full h-[45px]"
+                  src={user.photoURL}
+                />
               </div>
-           
-          
-     
+            </div>
+            <ul
+              tabIndex={0}
+              className="menu menu-sm dropdown-content mt-3 z-30 p-2 shadow bg-base-100 rounded-box w-52"
+            >
+              <li>
+                <NavLink to="/myListFoods">My added food items</NavLink>
+              </li>
+              <li>
+                <NavLink to="/foodAddItem">Add a food item</NavLink>
+              </li>
+              <li>
+                <NavLink to="/orderedFood">My ordered food items</NavLink>
+              </li>
+            </ul>
+            <div></div>
+          </div>
+           <button onClick={() => logOut()} className="btn bg-[#F60] text-[16px]">Log Out</button>
+           </>
         ) : (
           <Link to="/login">
             <a className="btn bg-[#F60] text-[16px]">Login</a>

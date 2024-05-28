@@ -8,11 +8,12 @@ import { Helmet } from "react-helmet";
 
 
 const Login = () => {
-
+  const {loginUser, googleLogin, setUser} = useContext(AuthContext)
   const location = useLocation()
   const Navigate = useNavigate()
+  const from = location.state?.from?.pathname || "/";
+
    
-   const {loginUser, googleLogin, setUser} = useContext(AuthContext)
  
 
     const handleLogin = (e) => {
@@ -21,8 +22,16 @@ const Login = () => {
         const password = e.target.password.value;
     
         loginUser(email, password)
-        .then( () => {
-          Navigate(location?.state ? location.state : '/');
+        .then(result => {
+          setUser(result.user)
+          toast.success('Google login successfully!')
+          // Navigate(location?.state ? location.state : '/');
+          Navigate(from, { replace: true });
+  
+        })
+        .catch(error => {
+          console.error(error);
+          toast.error('Google login fail!');
         })
     
     }
@@ -33,7 +42,8 @@ const Login = () => {
       .then(result => {
         setUser(result.user)
         toast.success('Google login successfully!')
-        Navigate(location?.state ? location.state : '/');
+        // Navigate(location?.state ? location.state : '/');
+        Navigate(from, { replace: true });
 
       })
       .catch(error => {

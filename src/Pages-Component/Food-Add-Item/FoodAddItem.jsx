@@ -6,12 +6,13 @@ import { AuthContext } from '../../Auth-Provider/AuthProvider';
 
 const FoodAddItem = () => {
     const {user} = useContext(AuthContext);
+    console.log(user);
     const handleAddFoodItem = event => {
         event.preventDefault();
 
         const form = event.target;
 
-        const name = form.name.value;
+        const name = user.displayName;
         const photo = form.photo.value;
         const price = form.price.value;
         const email = user.email;
@@ -23,6 +24,7 @@ const FoodAddItem = () => {
         const numberOfPurchase = 0;
         const newFood = {name, photo, foodOrigin, foodName, price, email, description, quantity, subcategory, numberOfPurchase}
         console.log(newFood);
+        console.log(name);
 
         // send data to the server
         fetch('https://restaurant-management-website-server.vercel.app/food', {
@@ -69,7 +71,7 @@ const FoodAddItem = () => {
                             <div  className="mb-6">
                             <h3 className="font-bold">User Name :</h3>
                                 <label className="input  input-bordered flex items-center gap-2">
-                                    <input type="text" name="name" placeholder="User Name"required/>
+                                    <input type="text" name="name" defaultValue={user?.displayName} readOnly placeholder="User Name" required/>
                                 </label>
                             </div>
 

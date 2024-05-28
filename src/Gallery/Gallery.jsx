@@ -3,12 +3,15 @@ import { Helmet } from "react-helmet";
 import { AuthContext } from "../Auth-Provider/AuthProvider";
 import Swal from "sweetalert2";
 import "../App.css";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Gallery = () => {
+
+
  
   const location = useLocation()
-  const Navigate = useNavigate()
+  const navigate = useNavigate()
 
   const { user } = useContext(AuthContext);
   console.log(user);
@@ -16,8 +19,17 @@ const Gallery = () => {
 
     const closeModal = () => {
         setShowModal(false);
-        Navigate(location?.state ? location.state : '/gallery');
     };
+    const showFeedbackForm = () => {
+      if(!user) {
+        navigate('/login', { state: { from: location } })
+      }
+      else{
+        setShowModal(true);
+      }
+    }
+
+    
 
 
   const [foods, setFoods] = useState([]);
@@ -157,18 +169,12 @@ const Gallery = () => {
           
         </div>
           {/* Open the modal using document.getElementById('ID').showModal() method */}
-          {/* <div className="flex justify-center items-center mt-2">
-         { user?  ( <button className="btn text-2xl"
-              onClick={ () => setShowModal(true)}>Add Feedback</button>) : 
-             <Link to="/login">
-                <button className="btn text-2xl">Add Feedback</button>
-              </Link>
-              }
-          </div> */}
           <div className="flex justify-center items-center mt-2">
-        <button className="btn text-2xl"
-              onClick={ () => setShowModal(true)}>Add Feedback</button> 
+          <button className="btn text-2xl"
+              onClick={showFeedbackForm}>Add Feedback</button>
+             
           </div>
+    
           
       </section>
     </div>
