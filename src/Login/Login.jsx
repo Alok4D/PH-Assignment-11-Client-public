@@ -25,7 +25,6 @@ const Login = () => {
         .then(result => {
           setUser(result.user)
           toast.success('Google login successfully!')
-          // Navigate(location?.state ? location.state : '/');
           Navigate(from, { replace: true });
   
         })
@@ -42,7 +41,6 @@ const Login = () => {
       .then(result => {
         setUser(result.user)
         toast.success('Google login successfully!')
-        // Navigate(location?.state ? location.state : '/');
         Navigate(from, { replace: true });
 
       })

@@ -7,7 +7,7 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
--[Live Link(https://restaurant-management-pr-9fde5.web.app/)]
+-[Live Link(https://restaurant-management-website-fmgb6ov4n-alok-roys-projects.vercel.app/)]
 
 ### Required NPM Utility Packages Used in the Project:
 
